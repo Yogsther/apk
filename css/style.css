@@ -1,6 +1,9 @@
 :root {
 	--dark: #e7e7e7;
 	--darker: #cccccc;
+	--text: black;
+	--light-text: rgb(56, 56, 56);
+	--background: rgb(247, 247, 247);
 }
 
 #header {
@@ -9,12 +12,14 @@
 	margin: 0 auto;
 	text-align: center;
 	user-select: none;
+	cursor: pointer;
 }
 
 body {
-	background-color: rgb(247, 247, 247);
+	background-color: var(--background);
 	font-family: "Open Sans", sans-serif;
 	text-align: center;
+	color: var(--text);
 }
 
 #types {
@@ -34,6 +39,7 @@ body {
 	border-radius: 5px;
 	height: 26px;
 	min-width: 60px;
+	color: var(--text);
 }
 
 .type-active {

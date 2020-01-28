@@ -1,3 +1,37 @@
+var themes = {
+    light: {
+        dark: "#e7e7e7",
+        darker: "#cccccc",
+        text: "black",
+        background: "rgb(247, 247, 247)"
+    },
+    dark: {
+        dark: "#292929",
+        darker: "#222",
+        text: "white",
+        background: "#1b1b1b"
+    }
+};
+
+var darkmode = localStorage.getItem("darkmode");
+if (darkmode) {
+    setTheme(themes.dark);
+}
+
+function toggleTheme() {
+    darkmode = !darkmode;
+    localStorage.setItem("darkmode", darkmode);
+    setTheme(darkmode ? themes.dark : themes.light);
+}
+
+function setTheme(theme) {
+    let root = document.documentElement;
+    root.style.setProperty("--dark", theme.dark);
+    root.style.setProperty("--darker", theme.darker);
+    root.style.setProperty("--text", theme.text);
+    root.style.setProperty("--background", theme.background);
+}
+
 var extraCategories = [];
 var pool = database["Öl"];
 var lastSearch = "";
