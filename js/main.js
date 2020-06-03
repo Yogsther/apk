@@ -40,6 +40,7 @@ database["Alla"] = [];
 for (var key in database) {
     if (key != "Alla") {
         for (let item of database[key]) {
+            if (key == "updated") continue
             database["Alla"].push(item);
         }
     }
@@ -118,11 +119,12 @@ function back() {
 }
 
 var query = false;
+
 function search(q) {
     query = q;
-    document.getElementById("navigation").style.display = query
-        ? "none"
-        : "block";
+    document.getElementById("navigation").style.display = query ?
+        "none" :
+        "block";
 
     resultsPerPage = query ? 50 : 10;
     loadEntries();
@@ -171,11 +173,16 @@ function loadEntries() {
     document.getElementById("page").innerText =
         (page + 1).toString() +
         " / " +
-        (added < resultsPerPage
-            ? page + 1
-            : query
-            ? "?"
-            : Math.ceil(pool.length / resultsPerPage));
+        (added < resultsPerPage ?
+            page + 1 :
+            query ?
+            "?" :
+            Math.ceil(pool.length / resultsPerPage));
 }
+
+var updatedDate = new Date(updated)
+
+document.getElementById("updated-text").innerText = `Uppdaterad ${Math.round((Date.now() - updated) / 1000 / 60 / 60 / 24)} dagar sen.`
+document.getElementById("updated-date").innerText = `(${updatedDate.getDate()}-${updatedDate.getMonth()+1}-${updatedDate.getFullYear()})`
 
 loadEntries();

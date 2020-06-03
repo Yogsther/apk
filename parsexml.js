@@ -5,7 +5,7 @@ console.time("Loaded XML");
 var xml = fs.readFileSync("xml.xml");
 console.timeEnd("Loaded XML");
 console.time("Parsed XML");
-parseString(xml, function(err, result) {
+parseString(xml, function (err, result) {
     console.timeEnd("Parsed XML");
 
     console.time("Creating database");
@@ -39,13 +39,15 @@ parseString(xml, function(err, result) {
         });
     }
 
+
+
     console.timeEnd("Creating database");
 
     console.time("Saved database");
 
     fs.writeFileSync(
         "js/database.js",
-        "const database = " + JSON.stringify(database)
+        `const updated = ${Date.now()};const database = ${JSON.stringify(database)}`
     );
 
     console.timeEnd("Saved database");

@@ -129,7 +129,12 @@ input:focus {
 	display: block;
 	position: relative;
 	margin-top: 20px;
-	margin-bottom: 50px;
+	margin-bottom: 15px;
+}
+
+#updated {
+	display: block;
+	margin-bottom: 40px;
 }
 
 .next-button {
@@ -137,12 +142,14 @@ input:focus {
 	border-radius: 5px;
 	background-color: var(--dark);
 	padding: 8px;
+	color: var(--text);
 	margin: 10px;
 	cursor: pointer;
 }
 
 .next-button:disabled {
-	background: rgb(197, 197, 197);
+	background: var(--darker);
+	color: var(--light-text);
 }
 
 .next-button:hover {

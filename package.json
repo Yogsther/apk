@@ -1,0 +1,23 @@
+{
+  "name": "apk",
+  "version": "1.0.0",
+  "description": "Systembolagets sortiment sorterat efter APK\r https://sv.wikipedia.org/wiki/Alkohol_per_krona",
+  "main": "parsexml.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yogsther/apk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yogsther/apk/issues"
+  },
+  "homepage": "https://github.com/Yogsther/apk#readme",
+  "dependencies": {
+    "file-system": "^2.2.2",
+    "xml2js": "^0.4.23"
+  }
+}
